@@ -60,7 +60,7 @@ looker.plugins.visualizations.add({
           font-family: Helvetica;
         }
         .hello-world-roboto {
-          font:family: Roboto;
+          font-family: Roboto;
         }
       </style>
     `;
