@@ -20,8 +20,8 @@ looker.plugins.visualizations.add({
       type: "number",
       label: "Font Number",
       display: "range",
-      min: 10,
-      max: 20,
+      min: 24,
+      max: 120,
       step: 1
     },
 
@@ -39,6 +39,7 @@ looker.plugins.visualizations.add({
   // Set up the initial state of the visualization
   create: function(element, config) {
 
+    var font = config.font_number.toString() + "px";
     // Insert a <style> tag with some styles we'll use later.
     element.innerHTML = `
       <style>
@@ -50,7 +51,7 @@ looker.plugins.visualizations.add({
           text-align: center;
         }
         .hello-world-text-large {
-          font-size: 72px;
+          font-size: var(font);
         }
         .hello-world-text-small {
           font-size: 18px;
@@ -92,7 +93,7 @@ looker.plugins.visualizations.add({
     this._textElement.innerHTML = LookerCharts.Utils.htmlForCell(firstCell);
 
     // Set the size to the user-selected size
-    if (config.font_number < 10) {
+    if (config.font_number == "small") {
       this._textElement.className = "hello-world-text-small";
     } else {
       this._textElement.className = "hello-world-text-large";
