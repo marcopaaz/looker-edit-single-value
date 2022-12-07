@@ -21,6 +21,15 @@ looker.plugins.visualizations.add({
       label: "Font Number",
       display: "range",
       step: 1
+    },
+
+    font_family: {
+      type: "string",
+      label: "Font Family",
+      values: [
+        {"Helvetica": "helvetica"},
+        {"Roboto": "roboto"}
+      ]
     }
   },
   // Set up the initial state of the visualization
@@ -42,6 +51,12 @@ looker.plugins.visualizations.add({
         }
         .hello-world-text-small {
           font-size: 18px;
+        }
+        .hello-world-helvetica {
+          font-family: Helvetica
+        }
+        .hello-world-roboto {
+          font:family: Roboto
         }
       </style>
     `;
@@ -78,6 +93,12 @@ looker.plugins.visualizations.add({
       this._textElement.className = "hello-world-text-small";
     } else {
       this._textElement.className = "hello-world-text-large";
+    }
+
+    if (config.font_family == "helvetica") {
+      this._textElement.className = "hello-world-helvetica";
+    } else {
+      this._textElement.className = "hello-world-roboto";
     }
 
     // We are done rendering! Let Looker know.
