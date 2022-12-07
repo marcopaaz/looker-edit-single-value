@@ -16,7 +16,7 @@ looker.plugins.visualizations.add({
         {"X-Large": "x-large"}
       ],
       display: "radio",
-      default: "medium"
+      default: "small"
     },
 
     font_family: {
