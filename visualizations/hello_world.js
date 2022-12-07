@@ -39,7 +39,6 @@ looker.plugins.visualizations.add({
     element.innerHTML = `
       <style>
         .hello-world-vis {
-          /* Vertical centering */
           height: 100%;
           display: flex;
           flex-direction: column;
@@ -53,10 +52,10 @@ looker.plugins.visualizations.add({
           font-size: 18px;
         }
         .hello-world-helvetica {
-          font-family: Helvetica
+          font-family: Helvetica;
         }
         .hello-world-roboto {
-          font:family: Roboto
+          font:family: Roboto;
         }
       </style>
     `;
