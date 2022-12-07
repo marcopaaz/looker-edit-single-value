@@ -40,6 +40,7 @@ looker.plugins.visualizations.add({
   create: function(element, config) {
 
     var font = config.font_number.toString() + "px";
+    console.log(font);
     // Insert a <style> tag with some styles we'll use later.
     element.innerHTML = `
       <style>
