@@ -20,6 +20,8 @@ looker.plugins.visualizations.add({
       type: "number",
       label: "Font Number",
       display: "range",
+      min: 10,
+      max: 20,
       step: 1
     },
 
