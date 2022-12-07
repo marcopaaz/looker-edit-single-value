@@ -19,7 +19,8 @@ looker.plugins.visualizations.add({
     font_number: {
       type: "number",
       label: "Font Number",
-      display: "number"
+      display: "range",
+      step: 1
     }
   },
   // Set up the initial state of the visualization
