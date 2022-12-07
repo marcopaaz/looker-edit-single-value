@@ -14,6 +14,12 @@ looker.plugins.visualizations.add({
       ],
       display: "radio",
       default: "large"
+    },
+
+    font_number: {
+      type: "number",
+      label: "Font Number",
+      display: "number"
     }
   },
   // Set up the initial state of the visualization
