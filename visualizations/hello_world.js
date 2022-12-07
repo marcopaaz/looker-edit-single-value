@@ -51,7 +51,7 @@ looker.plugins.visualizations.add({
           text-align: center;
         }
         .hello-world-text-large {
-          font-size: var(font);
+          font-size: 128px;
         }
         .hello-world-text-small {
           font-size: 18px;
