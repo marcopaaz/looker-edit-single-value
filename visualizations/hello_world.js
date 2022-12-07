@@ -74,7 +74,7 @@ looker.plugins.visualizations.add({
     this._textElement.innerHTML = LookerCharts.Utils.htmlForCell(firstCell);
 
     // Set the size to the user-selected size
-    if (config.font_size == "small") {
+    if (config.font_number < 10) {
       this._textElement.className = "hello-world-text-small";
     } else {
       this._textElement.className = "hello-world-text-large";
