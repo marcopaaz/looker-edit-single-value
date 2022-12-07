@@ -29,7 +29,9 @@ looker.plugins.visualizations.add({
       values: [
         {"Helvetica": "helvetica"},
         {"Roboto": "roboto"}
-      ]
+      ],
+      display: "radio",
+      default: "helvetica"
     }
   },
   // Set up the initial state of the visualization
