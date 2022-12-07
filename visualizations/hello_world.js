@@ -9,20 +9,14 @@ looker.plugins.visualizations.add({
       type: "string",
       label: "Font Size",
       values: [
+        {"X-Small": "x-small"},
+        {"Small": "small"},
+        {"Medium": "medium"},
         {"Large": "large"},
-        {"Small": "small"}
+        {"X-Large": "x-large"}
       ],
       display: "radio",
-      default: "large"
-    },
-
-    font_number: {
-      type: "number",
-      label: "Font Number",
-      display: "range",
-      min: 24,
-      max: 120,
-      step: 1
+      default: "medium"
     },
 
     font_family: {
@@ -30,7 +24,7 @@ looker.plugins.visualizations.add({
       label: "Font Family",
       values: [
         {"Helvetica": "helvetica"},
-        {"Roboto": "roboto"}
+        {"Sans-Serif": "sans-serif"}
       ],
       display: "radio",
       default: "helvetica"
@@ -51,17 +45,21 @@ looker.plugins.visualizations.add({
           justify-content: center;
           text-align: center;
         }
-        .hello-world-text-large {
-          font-size: 128px;
-        }
-        .hello-world-text-small {
-          font-size: 18px;
-        }
-        .hello-world-helvetica {
+        .hello-world-option1 {
+          font-size: 12px;
           font-family: Helvetica;
         }
-        .hello-world-roboto {
-          font-family: Roboto;
+        .hello-world-option2 {
+          font-size: 12px;
+          font-family: Tahoma;
+        }
+        .hello-world-option3 {
+          font-size: 240px;
+          font-family: Helvetica;
+        }
+        .hello-world-option4 {
+          font-size: 240px;
+          font-family: Tahoma;
         }
       </style>
     `;
@@ -94,16 +92,14 @@ looker.plugins.visualizations.add({
     this._textElement.innerHTML = LookerCharts.Utils.htmlForCell(firstCell);
 
     // Set the size to the user-selected size
-    if (config.font_number == "small") {
-      this._textElement.className = "hello-world-text-small";
+    if (config.font_number == "x-small" && config.font_family == "helvetica") {
+      this._textElement.className = "hello-world-option1";
+    } else if (config.font_number == "x-small" && config.font_family == "sans-serif") {
+      this._textElement.className = "hello-world-option2";
+    } else if (config.font_number == "small" && config.font_family == "helvetica") {
+      this._textElement.className = "hello-world-option3";
     } else {
-      this._textElement.className = "hello-world-text-large";
-    }
-
-    if (config.font_family == "helvetica") {
-      this._textElement.className = "hello-world-helvetica";
-    } else {
-      this._textElement.className = "hello-world-roboto";
+      this._textElement.className = "hello-world-option4";
     }
 
     // We are done rendering! Let Looker know.
